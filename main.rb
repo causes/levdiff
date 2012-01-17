@@ -3,7 +3,12 @@
 require 'text'
 
 STDIN.readlines.each_slice(2) do |a, b|
-  distance = Text::Levenshtein.distance(a, b)
-  puts distance
-  puts [a, b].join if distance < 10
+  pairs = [[@last || '', a], [a, b]]
+
+  pairs.each do |x, y|
+    distance = Text::Levenshtein.distance(x, y)
+    puts distance
+    puts [x, y].join if distance < 10
+    @last = b
+  end
 end
