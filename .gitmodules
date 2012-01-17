@@ -1,0 +1,3 @@
+[submodule "plugins/c-levenshtein.git"]
+	path = plugins/c-levenshtein.git
+	url = git://gist.github.com/170531.git
