@@ -1,0 +1,13 @@
+$ cat sample.txt && echo '---' && cat sample.txt | THRESHOLD=10 be ruby
+./main.rb
+select f1, f2 from tables where id < 10;
+select * from users where id = 1;
+select * from users where id = 3;
+select * from users where id = 4;
+insert into users set name='test';
+delete from user limit 1;
+---
+select * from users where id = 1;
+select * from users where id = 3;
+select * from users where id = 3;
+select * from users where id = 4;
